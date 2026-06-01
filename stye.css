@@ -1,0 +1,214 @@
+    :root {
+      --navy: #0f1c2e;
+      --navy-mid: #162539;
+      --navy-light: #1e3352;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --cream: #f5f0e8;
+      --cream-dark: #ede6d6;
+      --text-main: #1a1a2e;
+      --text-muted: #6b7a8d;
+      --success: #2e7d57;
+      --success-light: #e8f5ee;
+      --danger: #c0392b;
+      --danger-light: #fdecea;
+      --step-inactive: #cbd5e1;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--text-main);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .app-header {
+      background: var(--navy);
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: 0 2px 20px rgba(0,0,0,.35);
+    }
+    .app-header .brand-icon {
+      width: 42px; height: 42px;
+      background: var(--gold);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--navy); font-weight: 700;
+    }
+    .app-header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.25rem;
+      color: #fff;
+      margin: 0;
+      letter-spacing: .3px;
+    }
+    .app-header span {
+      font-size: .75rem;
+      color: var(--gold-light);
+      display: block;
+      font-weight: 300;
+    }
+
+    /* Base card setups with smooth transition */
+.verification-card {
+    cursor: pointer;
+    text-transform: none;
+    transition: all 0.25s ease-in-out;
+    border-color: #dee2e6; /* Default light border */
+    font-family: 'poppins', sans-serif;
+      font-size: .7rem;
+      font-weight: 500;
+}
+    .hidden-section { display: none !important; }
+    .verification-card {
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        border: 2px solid #dee2e6 !important;
+    }
+    .verification-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1) !important;
+        border-color: #0d6efd !important;
+    }
+    .verification-card.border-primary {
+        transform: none !important;
+    }
+/* Hover Effects */
+.verification-card:hover {
+    transform: translateY(-4px); /* Lifts the card slightly up */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1) !important; /* Deepens the shadow */
+    border-color: #0d6efd; /* Highlights border blue on hover */
+}
+
+/* Active Selected State (Keeps style clean when clicked) */
+.verification-card.border-primary {
+    transform: none !important;
+}
+    /* ── STEPPER ── */
+    .stepper-wrap {
+      background: #fff;
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 22px 0 16px;
+    }
+    .stepper {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 0;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      position: relative;
+    }
+    .step-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 55%;
+      width: 90%;
+      height: 2px;
+      background: var(--step-inactive);
+      transition: background .4s;
+      z-index: 0;
+    }
+    .step-item.done:not(:last-child)::after { background: var(--gold); }
+    .step-circle {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 2px solid var(--step-inactive);
+      background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 600;
+      color: var(--step-inactive);
+      transition: all .3s;
+      position: relative; z-index: 1;
+    }
+    .step-item.active .step-circle {
+      border-color: var(--gold);
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .step-item.done .step-circle {
+      border-color: var(--gold);
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .step-label {
+      font-size: .7rem;
+      margin-top: 6px;
+      color: var(--text-muted);
+      text-align: center;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .step-item.active .step-label,
+    .step-item.done .step-label { color: var(--navy); }
+
+    /* ── MAIN CONTENT ── */
+    .main-wrap {
+      max-width: 860px;
+      margin: 36px auto;
+      padding: 0 16px 60px;
+    }
+
+    /* ── CARD ── */
+    .vcard {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0,0,0,.08);
+      overflow: hidden;
+      animation: fadeUp .4s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .vcard-header {
+      background: var(--navy);
+      padding: 22px 32px;
+      display: flex; align-items: center; gap: 12px;
+      border-radius: 15px;
+    }
+    .vcard-header .hicon {
+      width: 36px; height: 36px;
+      background: rgba(201,168,76,.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold-light); font-size: .95rem;
+    }
+    .vcard-header h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0;
+    }
+    .vcard-header p {
+      color: #8fa3be; font-size: .78rem; margin: 0; font-weight: 300;
+    }
+    .vcard-body { padding: 32px; }
+
+    /* ── SECTION LABEL ── */
+    .section-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-left: 3px solid var(--gold);
+      padding-left: 10px;
+      margin-bottom: 18px;
+    }
