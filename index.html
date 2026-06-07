@@ -401,19 +401,21 @@
             </div>
 
 
+
             <!-- EMPLOYMENT VERIFICATION-->
 
+            <!-- VERIFIED EMPLOYMENT -->
 
             <div id="employmentFormSection" class="hidden-section">
-                    <div class="col-md-3">
+                <div class="row g-3 mb-4">
+                <div class="col-md-4">
                         <label for="empClientName" class="form-label">Client's Name</label>
                         <select class="form-select" id="empClientName">
                             <option value="SUBJECT">Subject</option>
                             <option value="Co-Maker">Co-Maker</option>
                         </select>
                     </div>
-                <div class="row g-3 mb-4">
-                    <div class="col-md-8">
+                    <div class="col-md-4">
                         <label for="empCompany" class="form-label">Company Name</label>
                         <input type="text" class="form-control" id="empCompany" placeholder="e.g., SP Madrid">
                     </div>
@@ -425,28 +427,86 @@
                             <option value="CONTRACTUAL">Contractual</option>
                         </select>
                     </div>
-                    <div class="col-12">
-                        <label for="empAddress" class="form-label">Exact Physical Worksite Verified Address</label>
+                    <div class="col-4">
+                        <label for="empAddress" class="form-label">Office Address</label>
                         <input type="text" class="form-control" id="empAddress" placeholder="e.g., Quezon City">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="empHR" class="form-label">Interviewed Person</label>
                         <input type="text" class="form-control" id="empHR" placeholder="e.g., HR, Manager, Admin">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="empPosition" class="form-label">Position</label>
                         <input type="text" class="form-control" id="empPosition" placeholder="e.g., QA">
                     </div>
-                    <div class="col-md-6">
-                        <label for="empTenure" class="form-label">Tenure in Company</label>
+                    <div class="col-md-4">
+                        <label for="empTenure" class="form-label">Tenure</label>
                         <input type="text" class="form-control" id="empTenure" placeholder="e.g., 2 Years">
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <label for="empSalary" class="form-label">Monthly Salary</label>
-                        <input type="text" class="form-control" id="empSalary" placeholder="e.g., 28,500">
+                        <input type="text" class="form-control" id="empSalary" placeholder="e.g., 10,000">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="empInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="empFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="empNote" id="empNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
                     </div>
                 </div>
             </div>
+
+
+         <!-- UNKNOWN EMPLOYMENT -->
+
+            <div id="employmentUnknownSection" class="hidden-section">
+                <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                        <label for="empUnkClientName" class="form-label">Client's Name</label>
+                        <select class="form-select" id="empUnkClientName">
+                            <option value="SUBJECT">Subject</option>
+                            <option value="Co-Maker">Co-Maker</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="empUnkTalkedWith" class="form-label">Talked with</label>
+                        <input type="text" class="form-control" id="empUnkTalkedWith" placeholder="e.g., Name of Person Interviewed">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empUnkInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="empUnkInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empUnkFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="empUnkFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="empUnkNote" id="empUnkNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
+                    </div>
+                </div>
+            </div>
+
 
 
             <!-- BUSINESS VERIFICATION-->
@@ -511,7 +571,7 @@
 <footer>
     <div class="container">
         <hr class="my-4">
-        <p class="text-center text-muted mb-0" style="font-size: 0.9em;">&copy; 2026 Developed by Jerick Untiveros</p>
+        <p class="text-center text-muted mb-0" style="font-size: 0.9em;">&copy; Developed by Jerick Untiveros</p>
 </footer>
 </div>
 

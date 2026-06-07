@@ -195,17 +195,24 @@ document.addEventListener('DOMContentLoaded', function() {
             const position = document.getElementById('empPosition').value.toUpperCase();
             const tenure = document.getElementById('empTenure').value.toUpperCase();
             const salary = document.getElementById('empSalary').value;
+            const informants = document.getElementById('empInformants').value;
+            const fieldman = document.getElementById('empFieldman').value; 
+            const note = document.getElementById('empNote').value;
 
-            remarksText = `${clientName} EMPLOYMENT STATUS WAS VERIFIED AS LOCATED AND ACTIVE. ${clientName} IS CURRENTLY WORKING AT ${company} LOCATED AT ${address}. TALKED TO ${hr} WHO CONFIRMED THAT ${clientName} HOLDS THE POSITION AS ${position} ON A ${empStatus} STATUS FOR ${tenure}, ${clientName} MONTHLY INCOME IS PHP ${salary}. NO OTHER INFORMATION WAS GATHERED. ALL/OTHER INFORMANTS REFUSED TO TAKE SELFIE WITH FCV.`;
+            remarksText = `${clientName} EMPLOYMENT STATUS WAS VERIFIED AS LOCATED AND ACTIVE. ${clientName} IS CURRENTLY WORKING AT ${company} LOCATED AT ${address}. TALKED TO ${hr} WHO CONFIRMED THAT ${clientName} HOLDS THE POSITION AS ${position} ON A ${empStatus} STATUS FOR ${tenure}, ${clientName} MONTHLY INCOME IS PHP ${salary}. NO OTHER INFORMATION WAS GATHERED AND ${informants} REFUSED TO TAKE SELFIE WITH ${fieldman}'s visit. ${note ? "\n\nADDITIONAL REMARKS:\n" + note : ""}`;
         } 
 
         // EMPLOYMENT - UNKNOWN
         else if (scope === 'employment' && status === 'unknown') {
-            const role = document.getElementById('empUnkRole').value;
-            const comp = document.getElementById('empUnkCompany').value.toUpperCase() || "THE STATED EMPLOYER";
+            const clientName = document.getElementById('empUnkClientName').value.toUpperCase();
+            const talkedwith = document.getElementById('empUnkTalkedWith').value.toUpperCase();
+            const informants = document.getElementById('empUnkInformants').value;
+            const fieldman = document.getElementById('empUnkFieldman').value; 
+            const note = document.getElementById('empUnkNote').value;
 
-            remarksText = `EMPLOYMENT VERIFICATION: FCV CONDUCTED SITE INSPECTION AT ${comp}. UPON CHECKING WITH SECURITY AND AVAILABLE PERSONNEL MANAGEMENT, (${role}) IS UNKNOWN, UNFAMILIAR, AND HAS NO RECORD OF ACTIVE EMPLOYMENT AT THE SAID ESTABLISHMENT. ALL OTHER INFORMANTS MET WITHIN THE PREMISES REFUSED TO COOPERATE FURTHER OR TAKE PHOTO VERIFICATIONS.`;
-        }
+            remarksText = `THE GIVEN EMPLOYER ADDRESS IS LOCATED BUT ${clientName} IS UNKNOWN/UNFAMILIAR EMPLOYEE AT THE GIVEN ADDRESS. TALKED WITH ${talkedwith} WHO STATED THAT ${clientName} IS NOT EMPLOYEE AT THE GIVEN COMPANY BASED ON RECORDS. ${informants} REFUSED TO TAKE SELFIE PICTURE WITH ${fieldman} AND NO OTHER INFORMATION WAS GATHERED OF ${fieldman}'S VISIT.${note ? "\n\nADDITIONAL REMARKS:\n" + note : ""}`;
+            }
+
         // BUSINESS - LOCATED
         else if (scope === 'business' && status === 'verified') {
             const busName = document.getElementById('busName').value.toUpperCase();
