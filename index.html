@@ -72,7 +72,7 @@
             <div class="col-md-12">
                 <div class="section-badge fw-bold text-muted"><i class="fa-solid fa-square-poll-horizontal"></i> Field Verification Status</div>
                 <label for="verificationStatus" class="form-label text-primary fs-6"></label>
-                <select class="form-select form-select-lg" id="verificationStatus" style="font-family: poppins; font-size: .9em;" disabled>
+                <select class="form-select form-select-lg" id="verificationStatus" style="font-size: .9em;" disabled>
                     <option value="">-- Click a category card above first --</option>
                 </select>
             </div>
@@ -87,10 +87,9 @@
         <!-- RESIDENCE VERIFICATION-->
 
             <div id="residenceFormSection" class="hidden-section">
-
                 <!-- VERIFIED-->
 
-                <div class="row g-3 mb-4">
+            <div class="row g-3 mb-4">
                     <div class="col-md-3">
                         <label for="resClientName" class="form-label">Client's Name</label>
                         <select class="form-select" id="resClientName">
@@ -141,7 +140,7 @@
                     </div>
                     <div class="col-md-4">
                         <label for="resSalaryValue" class="form-label">Monthly Income</label>
-                        <input type="text" class="form-control" id="resSalaryValue" placeholder="e.g., 45,000">
+                        <input type="text" class="form-control" id="resSalaryValue" placeholder="e.g., 10,000">
                     </div>
                     <div class="col-12">
                         <label for="resLoanPurpose" class="form-label">Purpose of Loan</label>
@@ -180,14 +179,34 @@
                             <option value="HAS DEROGATORY RECORD ON FILE">Has Derogatory Record</option>
                         </select>
                     </div>
-                </div>
+                    <div class="col-md-4">
+                        <label for="resInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="resInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="resFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="resNote" id="resNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
+                    </div>
 
+            </div>
+            
             </div>
 
             
                 <!-- UNKNOWN-->
 
                 <div id="residenceUnknownSection" class="hidden-section">
+                    
                     <div class="row g-3 mb-4">
                     <div class="col-md-6">
                         <label for="resUnkRole" class="form-label">Client's Name</label>
@@ -207,8 +226,179 @@
                             <option value="NOT A LISTED RESIDENT">Not a Listed Resident</option>
                         </select>
                     </div>
+                    <div class="col-md-4">
+                        <label for="resUnkInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="resUnkInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resUnkFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="resUnkFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="resUnkNote" id="resUnkNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
+                    </div>
                 </div>
+
                 </div>
+
+                <!--- CLOSED UNATTENDED -->
+
+                <div id="residenceClosedSection" class="hidden-section">
+                    
+                    <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label for="resClosedRole" class="form-label">Client's Name</label>
+                        <input type="text" class="form-control" id="resClosedRole" placeholder="e.g., Subject and Co-Maker">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resClosedVoter" class="form-label">Brgy. Voter Status</label>
+                        <select class="form-select" id="resClosedVoter">
+                            <option value="REGISTERED VOTER">Registered Voter</option>
+                            <option value="NOT A REGISTERED VOTER">Not a Registered Voter</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resClosedResident" class="form-label">Brgy. Resident Status</label>
+                        <select class="form-select" id="resClosedResident">
+                            <option value="LISTED RESIDENT">Listed Resident</option>
+                            <option value="NOT A LISTED RESIDENT">Not a Listed Resident</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resClosedInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="resClosedInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resClosedFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="resClosedFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="resClosedNote" id="resClosedNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
+                    </div>
+                </div>
+
+                </div>
+
+                <!--- UNLOCATED -->
+
+                <div id="residenceUnlocatedSection" class="hidden-section">
+                    
+                    <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label for="resUnlocatedRole" class="form-label">Client's Name</label>
+                        <input type="text" class="form-control" id="resUnlocatedRole" placeholder="e.g., Subject and Co-Maker">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resUnlocatedAddress" class="form-label">Incomplete Address</label>
+                        <select class="form-select" id="resUnlocatedAddress">
+                            <option value="SUBDIVISION NAME">Subdivision Name</option>
+                            <option value="HOUSE NUMBER / BLK NUMBER">House Number / Blk Number</option>
+                            <option value="PHASE NUMBER">Phase Number</option>
+
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resUnlocatedVoter" class="form-label">Brgy. Voter Status</label>
+                        <select class="form-select" id="resUnlocatedVoter">
+                            <option value="REGISTERED VOTER">Registered Voter</option>
+                            <option value="NOT A REGISTERED VOTER">Not a Registered Voter</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resUnlocatedResident" class="form-label">Brgy. Resident Status</label>
+                        <select class="form-select" id="resUnlocatedResident">
+                            <option value="LISTED RESIDENT">Listed Resident</option>
+                            <option value="NOT A LISTED RESIDENT">Not a Listed Resident</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resUnlocatedInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="resUnlocatedInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resUnlocatedFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="resUnlocatedFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="resUnlocatedNote" id="resUnlocatedNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
+                    </div>
+
+                    </div>
+                </div>
+
+                <!--- DENIED ENTRY --->
+
+                <div id="residenceDeniedSection" class="hidden-section">
+                    
+                    <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <label for="resDeniedRole" class="form-label">Client's Name</label>
+                        <input type="text" class="form-control" id="resDeniedRole" placeholder="e.g., Subject and Co-Maker">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resDeniedPosition" class="form-label">Informant's Name</label>
+                        <select class="form-select" id="resDeniedPosition">
+                            <option value="SECURITY GUARD">Security Guard</option>
+                            <option value="ADMIN STAFF">Admin Staff</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resDeniedVoter" class="form-label">Brgy. Voter Status</label>
+                        <select class="form-select" id="resDeniedVoter">
+                            <option value="REGISTERED VOTER">Registered Voter</option>
+                            <option value="NOT A REGISTERED VOTER">Not a Registered Voter</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resDeniedResident" class="form-label">Brgy. Resident Status</label>
+                        <select class="form-select" id="resDeniedResident">
+                            <option value="LISTED RESIDENT">Listed Resident</option>
+                            <option value="NOT A LISTED RESIDENT">Not a Listed Resident</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resDeniedInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="resDeniedInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="resDeniedFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="resDeniedFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="resDeniedNote" id="resDeniedNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
+                    </div>
+                </div>
+            </div>
 
 
             <!-- EMPLOYMENT VERIFICATION-->
@@ -299,6 +489,7 @@
                 <button type="submit" class="btn btn-primary btn-lg w-100" id="generateBtn">Verification Remarks</button>
             </div>
         </form>
+
       </div>
     </div>
   </div>
@@ -310,7 +501,7 @@
 
       </div>
       <div class="card-body p-3">
-          <textarea class="form-control font-monospace text-dark bg-white" id="generatedRemarksBox" rows="8" readonly style="line-height:1.5; font-size: 0.92rem;"></textarea>
+          <textarea class="form-control font-monospace text-dark bg-white" id="generatedRemarksBox" rows="8" readonly style="line-height:1.5; font-size: 0.92rem; text-transform: uppercase;"></textarea>
         <button class="btn-outline-navy mt-3" id="newVerificationBtn" onclick="location.reload();">
             <i class="fa-solid fa-rotate-left"></i>&nbsp; New Verification
         </button>

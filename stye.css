@@ -16,6 +16,11 @@
     }
 
     * { box-sizing: border-box; }
+    label, option, textarea { 
+    font-family: poppins, sans-serif; 
+    font-size: 13px;
+    font-weight: 500;
+  }
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -54,7 +59,6 @@
       font-weight: 300;
     }
 
-    /* Base card setups with smooth transition */
 .verification-card {
     cursor: pointer;
     text-transform: none;
