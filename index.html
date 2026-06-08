@@ -507,6 +507,208 @@
                 </div>
             </div>
 
+            <!-- EMPLOYER CLOSED -->
+
+            <div id="employmentClosedSection" class="hidden-section">
+                <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                        <label for="empClosedClientName" class="form-label">Client's Name</label>
+                        <select class="form-select" id="empClosedClientName">
+                            <option value="SUBJECT">Subject</option>
+                            <option value="Co-Maker">Co-Maker</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empClosedFamiliar" class="form-label">Client Familiarity</label>
+                        <select class="form-select" id="empClosedFamiliar">
+                            <option value="KNOWN">Known</option>
+                            <option value="UNKNOWN">Unknown</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="empClosedTalkedWith" class="form-label">Talked with</label>
+                        <input type="text" class="form-control" id="empClosedTalkedWith" placeholder="e.g., Name of Person Interviewed">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empClosedOperates" class="form-label">Operates Day</label>
+                        <select class="form-select" id="empClosedOperates">
+                            <option value="WEEKDAYS">Weekdays</option>
+                            <option value="WEEKENDS">Weekends</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="empClosedTime" class="form-label">Time Operated</label>
+                        <input type="text" class="form-control" id="empClosedTime" placeholder="e.g., 8AM-5PM">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empClosedInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="empClosedInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empClosedFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="empClosedFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="empClosedNote" id="empClosedNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EMPLOYER DENIED ENTRY -->
+
+            <div id="employmentDeniedSection" class="hidden-section">
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="empDeniedClientName" class="form-label">Client's Name</label>
+                        <select class="form-select" id="empDeniedClientName">
+                            <option value="SUBJECT">Subject</option>
+                            <option value="Co-Maker">Co-Maker</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empDeniedFamiliar" class="form-label">Client Familiarity</label>
+                        <select class="form-select" id="empDeniedFamiliar">
+                            <option value="KNOWN">Known</option>
+                            <option value="UNKNOWN">Unknown</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="empDeniedTalkedWith" class="form-label">Talked with</label>
+                        <input type="text" class="form-control" id="empDeniedTalkedWith" placeholder="e.g., Name of Person Interviewed">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empDeniedProperty" class="form-label">Company Property</label>
+                        <select class="form-select" id="empDeniedProperty">
+                            <option value="BUILDING">Building</option>
+                            <option value="SUBDIVISION">Subdivision</option>
+                            <option value="AREA">Area</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empDeniedInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="empDeniedInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empDeniedFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="empDeniedFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="empDeniedNote" id="empDeniedNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EMPLOYER UNLOCATED / UNKNOWN -->
+
+            <div id="employmentUnlocatedSection" class="hidden-section">
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="empUnlocatedClientName" class="form-label">Client's Name</label>
+                        <select class="form-select" id="empUnlocatedClientName">
+                            <option value="SUBJECT">Subject</option>
+                            <option value="Co-Maker">Co-Maker</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empUnlocatedVisitation" class="form-label">Address Visitation</label>
+                        <select class="form-select" id="empUnlocatedVisitation">
+                            <option value="NOT SUCCESSFULLY">Not Successfully</option>
+                            <option value="SUCCESSFULLY">Successfully</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="empUnlocatedTalkedWith" class="form-label">Talked with</label>
+                        <input type="text" class="form-control" id="empUnlocatedTalkedWith" placeholder="e.g., Neighbors, Staff, Security Guard">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empUnlocatedVerification" class="form-label">Brgy. Verification</label>
+                        <select class="form-select" id="empUnlocatedVerification">
+                            <option value="REGISTERED">Registered</option>
+                            <option value="NOT REGISTERED">Not Registered</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empUnlocatedInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="empUnlocatedInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empUnlocatedFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="empUnlocatedFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="empUnlocatedNote" id="empUnlocatedNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- EMPLOYER RESIGNED -->
+
+            <div id="employmentResignedSection" class="hidden-section">
+
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="empResignedClientName" class="form-label">Client's Name</label>
+                        <select class="form-select" id="empResignedClientName">
+                            <option value="SUBJECT">Subject</option>
+                            <option value="Co-Maker">Co-Maker</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <label for="empResignedTalkedWith" class="form-label">Talked with</label>
+                        <input type="text" class="form-control" id="empResignedTalkedWith" placeholder="e.g., HR, ADMIN, STAFF">
+                    </div>
+                    <div class="col-4">
+                        <label for="empResignedYears" class="form-label">Years Resigned</label>
+                        <input type="text" class="form-control" id="empResignedYears" placeholder="e.g., How many years/months?">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empResignedInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="empResignedInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="empResignedFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="empResignedFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="empResignedNote" id="empResignedNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
+                    </div>
+                </div>
+            </div>
+
 
 
             <!-- BUSINESS VERIFICATION-->
@@ -514,33 +716,92 @@
 
             <div id="businessFormSection" class="hidden-section">
                 <div class="row g-3 mb-4">
-                    <div class="col-md-8">
-                        <label for="busName" class="form-label">Registered Business Name / Signage</label>
-                        <input type="text" class="form-control" id="busName" placeholder="e.g., R&K GROCERY STORE">
+                <div class="col-md-4">
+                        <label for="busVerifiedClientName" class="form-label">Client's Name</label>
+                        <select class="form-select" id="busVerifiedClientName">
+                            <option value="SUBJECT">Subject</option>
+                            <option value="Co-Maker">Co-Maker</option>
+                        </select>
                     </div>
                     <div class="col-md-4">
-                        <label for="busType" class="form-label">Business Structure Category</label>
-                        <input type="text" class="form-control" id="busType" placeholder="e.g., SOLE PROPRIETORSHIP">
+                        <label for="busVerifiedName" class="form-label">Verified Name</label>
+                        <select class="form-select" id="busVerifiedName">
+                            <option value="SUBJECT">Subject</option>
+                            <option value="CO-MAKER">Co-Maker</option>
+                            <option value="RELATIVE">Relative</option>
+                            <option value="HR">HR</option>
+                            <option value="ADMIN">Admin</option>
+                            <option value="STAFF">Staff</option>
+                            <option value="NEIGHBORS">Neighbors</option>
+                        </select>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="busName" class="form-label">Business Name</label>
+                        <input type="text" class="form-control" id="busName" placeholder="e.g., SP MADRID">
                     </div>
                     <div class="col-12">
-                        <label for="busAddress" class="form-label">Physical Business Address Inspected</label>
-                        <input type="text" class="form-control" id="busAddress" placeholder="e.g., STALL 4, PUBLIC MARKET, CALAMBA LAGUNA">
+                        <label for="busAddress" class="form-label">Business Address</label>
+                        <input type="text" class="form-control" id="busAddress" placeholder="e.g., QUEZON CITY">
                     </div>
                     <div class="col-md-6">
-                        <label for="busInformant" class="form-label">Informant Contact Interviewed & Position</label>
-                        <input type="text" class="form-control" id="busInformant" placeholder="e.g., SUBJECT HIMSELF / LALINE DIZON (CASHIER)">
+                        <label for="busOperating" class="form-label">Operational</label>
+                        <input type="text" class="form-control" id="busOperating" placeholder="e.g., ILANG YEARS AND MONTHS">
                     </div>
                     <div class="col-md-6">
-                        <label for="busYears" class="form-label">Total Operation History Length</label>
-                        <input type="text" class="form-control" id="busYears" placeholder="e.g., 5 YEARS">
+                        <label for="busIncome" class="form-label"> Monthly Gross Income</label>
+                        <input type="text" class="form-control" id="busIncome" placeholder="e.g., 100,000">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="busSignage" class="form-label">Signage</label>
+                        <select class="form-select" id="busSignage">
+                            <option value="WITH SIGNAGE">Signage</option>
+                            <option value="NO SIGNAGE">No Signage</option>
+                        </select>
                     </div>
                     <div class="col-md-6">
-                        <label for="busRevenue" class="form-label">Estimated Gross Monthly Sales/Revenue (PHP)</label>
-                        <input type="text" class="form-control" id="busRevenue" placeholder="e.g., 120,000">
+                        <label for="busOpen" class="form-label">Day Operating</label>
+                        <input type="text" class="form-control" id="busOpen" placeholder="e.g., MONDAY TO FRIDAY">
                     </div>
                     <div class="col-md-6">
-                        <label for="busPermits" class="form-label">Permits Sighted (DTI / Mayor's Permit)</label>
-                        <input type="text" class="form-control" id="busPermits" placeholder="e.g., VALID MAYOR'S PERMIT SIGHTED">
+                        <label for="busTime" class="form-label">Time Operating</label>
+                        <input type="text" class="form-control" id="busTime" placeholder="e.g., 7AM TO 4PM">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="busKnownOperating" class="form-label">Known Operational</label>
+                        <select class="form-select" id="busKnownOperating">
+                            <option value="OPERATING">Operating</option>
+                            <option value="NOT OPERATING">Not Operating</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="busPermits" class="form-label">Permits</label>
+                        <input type="text" class="form-control" id="busPermits" placeholder="e.g., MAYOR'S, PERMIT, DTI">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="busVerification" class="form-label">Brgy. Verification</label>
+                        <select class="form-select" id="busVerification">
+                            <option value="REGISTERED">Registered</option>
+                            <option value="NOT REGISTERED">Not Registered</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="busInformants" class="form-label">Informants</label>
+                        <select class="form-select" id="busInformants">
+                            <option value="OTHER INFORMANTS">Other Informants</option>
+                            <option value="ALL INFORMANTS">All Informants</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="busFieldman" class="form-label">Fieldman</label>
+                        <select class="form-select" id="busFieldman">
+                            <option value="FCV">FCV</option>
+                            <option value="FCI">FCI</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="col-md-9">
+                        <textarea name="busNote" id="busNote" class="form-control" placeholder="OTHER REMARKS/NOTE"></textarea>
                     </div>
                 </div>
             </div>

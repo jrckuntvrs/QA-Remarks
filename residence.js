@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         employment: [
             { value: "verified", text: "Verified" },
-            { value: "unknown", text: "Unknown Employment" },
+            { value: "unknown", text: "Unknown Employee / Not Connected" },
             { value: "closed", text: "Employer Closed" },
-            { value: "unlocated", text: "Employer Unlocated" },
+            { value: "unlocated", text: "Employer Unlocated / Unknown" },
             { value: "resigned", text: "Resigned / Terminated" },
             { value: "denied", text: "Denied Entry" }
 
@@ -88,14 +88,32 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('residenceDeniedSection').classList.remove('hidden-section');
         }
 
-
+        // Positive Employment
         else if (scope === 'employment' && currentStatus === 'verified') {
             document.getElementById('employmentFormSection').classList.remove('hidden-section');
         } 
+        // Unknown Employment
         else if (scope === 'employment' && currentStatus === 'unknown') {
             document.getElementById('employmentUnknownSection').classList.remove('hidden-section');
         }
+        // Closed Employment
+        else if (scope === 'employment' && currentStatus === 'closed') {
+            document.getElementById('employmentClosedSection').classList.remove('hidden-section');
+        }
+        // Denied Employment
+        else if (scope === 'employment' && currentStatus === 'denied') {
+            document.getElementById('employmentDeniedSection').classList.remove('hidden-section');
+        }
+        // UNLOCATED Employment
+        else if (scope === 'employment' && currentStatus === 'unlocated') {
+            document.getElementById('employmentUnlocatedSection').classList.remove('hidden-section');
+        }
+        // Resigned Employment
+        else if (scope === 'employment' && currentStatus === 'resigned') {
+            document.getElementById('employmentResignedSection').classList.remove('hidden-section');
+        }
 
+        // Business - Positive
         else if (scope === 'business' && currentStatus === 'verified') {
             document.getElementById('businessFormSection').classList.remove('hidden-section');
         }
@@ -213,18 +231,78 @@ document.addEventListener('DOMContentLoaded', function() {
             remarksText = `THE GIVEN EMPLOYER ADDRESS IS LOCATED BUT ${clientName} IS UNKNOWN/UNFAMILIAR EMPLOYEE AT THE GIVEN ADDRESS. TALKED WITH ${talkedwith} WHO STATED THAT ${clientName} IS NOT EMPLOYEE AT THE GIVEN COMPANY BASED ON RECORDS. ${informants} REFUSED TO TAKE SELFIE PICTURE WITH ${fieldman} AND NO OTHER INFORMATION WAS GATHERED OF ${fieldman}'S VISIT.${note ? "\n\nADDITIONAL REMARKS:\n" + note : ""}`;
             }
 
+        // EMPLOYMENT - CLOSED
+        else if (scope === 'employment' && status === 'closed') {
+            const clientName = document.getElementById('empClosedClientName').value.toUpperCase();
+            const operates = document.getElementById('empClosedOperates').value;
+            const familiar = document.getElementById('empClosedFamiliar').value;
+            const time = document.getElementById('empClosedTime').value;
+            const talkedwith = document.getElementById('empClosedTalkedWith').value.toUpperCase();
+            const informants = document.getElementById('empClosedInformants').value;
+            const fieldman = document.getElementById('empClosedFieldman').value;
+            const note = document.getElementById('empClosedNote').value;
+
+            remarksText = `THE GIVEN EMPLOYER ADDRESS IS LOCATED AND SUBJECT IS ${familiar} CONNECTED TO THE GIVEN COMPANY. TALKED WITH ${talkedwith} WHO STATED THAT EMPLOYER IS CLOSED TODAY AND ${talkedwith} STATING THAT EMPLOYER IS OPERATES EVERY ${operates} FROM ${time}. ${informants} REFUSED TO TAKE SELFIE PICTURE WITH ${fieldman} AND NO OTHER INFORMATION WAS GATHERED OF ${fieldman}'S VISIT.${note ? "\n\nADDITIONAL REMARKS:\n" + note : ""}`;
+            }
+        // EMPLOYMENT - DENIED ENTRY
+        else if (scope === 'employment' && status === 'denied') {
+            const clientName = document.getElementById('empDeniedClientName').value.toUpperCase();
+            const talkedwith = document.getElementById('empDeniedTalkedWith').value.toUpperCase();
+            const informants = document.getElementById('empDeniedInformants').value;
+            const property = document.getElementById('empDeniedProperty').value;
+            const familiar = document.getElementById('empDeniedFamiliar').value;
+            const fieldman = document.getElementById('empDeniedFieldman').value;
+            const note = document.getElementById('empDeniedNote').value;
+
+            remarksText = `THE GIVEN ADDRESS IS LOCATED BUT UPON VISIT ${fieldman} WAS DENIED ENTRY. TALKED WITH ${talkedwith} WHO STATED THAT ${fieldman} CANNOT ENTER IN THE ${property} DUE TO COMPANY PROTOCOLS AND NEED TO CALL FIRST THE COMPANY BEFORE ENTERING THE ${property}. ${informants} REFUSED TO TAKE SELFIE PICTURE WITH ${fieldman} AND NO OTHER INFORMATION WAS GATHERED OF ${fieldman}'S VISIT.${note ? "\n\nADDITIONAL REMARKS:\n" + note : ""}`;
+            }
+        // EMPLOYMENT - RESISGNED
+        else if (scope === 'employment' && status === 'resigned') {
+            const clientName = document.getElementById('empResignedClientName').value.toUpperCase();
+            const talkedwith = document.getElementById('empResignedTalkedWith').value.toUpperCase();
+            const informants = document.getElementById('empResignedInformants').value;
+            const years = document.getElementById('empResignedYears').value;
+            const fieldman = document.getElementById('empResignedFieldman').value;
+            const note = document.getElementById('empResignedNote').value;
+
+            remarksText = `THE GIVEN EMPLOYER ADDRESS IS LOCATED AND TALKED WITH ${talkedwith} WHO STATED THE ${clientName} IS THEIR FORMER EMPLOYEE AT THE COMPANY. ${clientName} IS ALREADY RESIGNED FOR ${years} AGO. ${informants} REFUSED TO TAKE SELFIE PICTURE WITH ${fieldman} AND NO OTHER INFORMATION WAS GATHERED OF ${fieldman}'S VISIT.${note ? "\n\nADDITIONAL REMARKS:\n" + note : ""}`;
+            }
+
+        // EMPLOYMENT - UNLOCATED
+        else if (scope === 'employment' && status === 'unlocated') {
+            const clientName = document.getElementById('empUnlocatedClientName').value.toUpperCase();
+            const talkedwith = document.getElementById('empUnlocatedTalkedWith').value.toUpperCase();
+            const informants = document.getElementById('empUnlocatedInformants').value;
+            const verification = document.getElementById('empUnlocatedVerification').value;
+            const visit = document.getElementById('empUnlocatedVisitation').value;
+            const fieldman = document.getElementById('empUnlocatedFieldman').value;
+            const note = document.getElementById('empUnlocatedNote').value;
+
+            remarksText = `THE GIVEN EMPLOYER ADDRESS WAS ${visit} LOCATED; HOWEVER, UPON VERIFICATION IN THE AREA, TALKED TO ${talkedwith} THAT THE ${clientName}'S EMPLOYER NAME HAD NO IDEA WE'RE BEEN OPERATING AND NOT FAMILIAR OF EMPLOYER NAME. UPON BRGY VERIFICATION, THE EMPLOYER IS ${verification} AT THE BRGY AND HAS NO RECORD. ${informants} REFUSED TO TAKE SELFIE PICTURE WITH ${fieldman} AND NO OTHER INFORMATION WAS GATHERED OF ${fieldman}'S VISIT.${note ? "\n\nADDITIONAL REMARKS:\n" + note : ""}`;
+            }
+
+
         // BUSINESS - LOCATED
         else if (scope === 'business' && status === 'verified') {
-            const busName = document.getElementById('busName').value.toUpperCase();
-            const busType = document.getElementById('busType').value.toUpperCase();
-            const busAddress = document.getElementById('busAddress').value.toUpperCase();
-            const informant = document.getElementById('busInformant').value.toUpperCase();
-            const years = document.getElementById('busYears').value.toUpperCase();
-            const revenue = document.getElementById('busRevenue').value;
+            const name = document.getElementById('busVerifiedClientName').value.toUpperCase();
+            const verified = document.getElementById('busVerifiedName').value.toUpperCase();
+            const busname = document.getElementById('busName').value.toUpperCase();
+            const address = document.getElementById('busAddress').value.toUpperCase();
+            const informant = document.getElementById('busInformants').value.toUpperCase();
+            const operating = document.getElementById('busOperating').value.toUpperCase();
+            const income = document.getElementById('busIncome').value;
+            const signage = document.getElementById('busSignage').value;
+            const open = document.getElementById('busOpen').value;
+            const time = document.getElementById('busTime').value;
+            const knownoperating = document.getElementById('busKnownOperating').value;
+            const verification = document.getElementById('busVerification').value;
+            const fieldman = document.getElementById('busFieldman').value;
+            const note = document.getElementById('busNote').value;
             const permits = document.getElementById('busPermits').value.toUpperCase();
 
-            remarksText = `APPLICANT'S COMMERCIALLY TRADING ENTERPRISE WAS VERIFIED AS LOCATED AND OPERATIONAL. OPERATING UNDER SIGNAGE DESIGNATION "${busName}" (${busType}) SITUATED AT ${busAddress}. STATED TIMELINE HISTORY LENGTH SHOWS OPEN TRADING STATUS FOR ${years}. INTERVIEWED CORRESPONDENT SOURCE ${informant} WHO CONFIRMED ESTIMATED GROSS SALES OF PHP ${revenue} MONTHLY. SYSTEM PERMITS REVEALED: ${permits}.`;
+            remarksText = `${name}'s BUSINESS IS VERIFIED OPERATIONAL AT THE GIVEN ADDRESS AND OWNED BY ${name}. BV DONE THRU ${verified} WHO SPELLED OUT BUSINESS NAME CORRECTLY. BUSINESS NAMED IS ${busname} LOCATED AT ${address} AND BUSINESS IS OPERATES FOR ${operating} WITH MONTHLY GROSS INCOME OF ${income}. BUSINESS IS HAS ${signage} AND IT OPERATE'S FROM ${open} TO ${time}. THE DOCUMENTS WAS PRESENTED AREA ${permits}. AS PER INFORMANT IN THE AREA, BUSINESS IS ${knownoperating} IN THE AREA. AS PER BRGY INFORMANT BUSINESS IS ${verification} BASED ON RECORDS. ${informant} REFUSED TO TAKE SELFIE PICTURE WITH ${fieldman} AND NO OTHER INFORMATION WAS GATHERED OF ${fieldman}'S VISIT.${note ? "\n\nADDITIONAL REMARKS:\n" + note : ""}`;
         }
+        
         // BUSINESS - UNKNOWN
         else if (scope === 'business' && status === 'unknown') {
             const role = document.getElementById('busUnkRole').value;
@@ -261,7 +339,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function hideAllFormSections() {
         const sections = [
             'residenceFormSection', 'residenceUnknownSection', 'residenceClosedSection', 'residenceUnlocatedSection', 'residenceDeniedSection',
-            'employmentFormSection', 'employmentUnknownSection',
+            'employmentFormSection', 'employmentUnknownSection', 'employmentClosedSection', 'employmentUnlocatedSection', 'employmentDeniedSection', 'employmentResignedSection',
             'businessFormSection', 'businessUnknownSection'
         ];
         sections.forEach(id => {
